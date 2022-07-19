@@ -1,3 +1,5 @@
+//Given a string, replace the spaces with "%20"
+
 #include <string>
 #include <iostream>
 #include <cstring>
