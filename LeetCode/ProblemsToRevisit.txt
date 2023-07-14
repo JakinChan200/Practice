@@ -1,0 +1,7 @@
+Easy:
+21. Merge Two Sorted Lists
+121. Best Time To Buy and Sell Stock
+
+Medium:
+
+Hard:
