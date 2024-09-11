@@ -23,7 +23,7 @@ void printTree(TreeNode * head){
 }
 
 void insertIntoTree(TreeNode * head, TreeNode * node){
-    TreeNode * cur = head;
+    //TreeNode * cur = head;
 
     if(node->val < head->val){
         if(head->left == nullptr){
@@ -83,6 +83,7 @@ int main(int argc, char* argv[]){
     printTree(head);
 
     cout << "\nAnswer: " << endl;
-    TreeNode *answer = invertTree(head);
+    TreeNode * answer = invertTree(head);
     printTree(answer);
+    return 0;
 }
