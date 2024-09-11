@@ -1,3 +1,4 @@
+//121
 //Given an array price[], pick a day to buy and sell where profit is maximized
 #include <bits/stdc++.h>
 

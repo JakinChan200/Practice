@@ -1,3 +1,4 @@
+//1
 //Given a vector and a target, return the index of the two numbers that add up to target
 #include <bits/stdc++.h>
 

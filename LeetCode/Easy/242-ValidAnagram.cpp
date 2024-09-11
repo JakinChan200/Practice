@@ -1,3 +1,4 @@
+//242
 //Check if two inputs are rearranged versions of each other
 #include <bits/stdc++.h>
 
