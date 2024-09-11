@@ -1,3 +1,4 @@
+//125
 //After turning all letters to lowercase and removing all non-numebrs and letter, is it a palindrome?
 #include <bits/stdc++.h>
 
