@@ -1,7 +1,9 @@
 Easy:
 21. Merge Two Sorted Lists
 121. Best Time To Buy and Sell Stock
+70. Climbing Stairs
 
 Medium:
+Balanced Binary Tree
 
 Hard:
