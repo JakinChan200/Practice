@@ -16,7 +16,7 @@ int countConsistentStrings(string allowed, vector<string> & words){
     for(string word: words){
         isAllowed = true;
         for(char letter : word){
-            if(allowedLetters[letter] == 0){
+            if(allowedLetters[letter - 'a'] == 0){
                 isAllowed = false;
             }
         }
@@ -27,35 +27,35 @@ int countConsistentStrings(string allowed, vector<string> & words){
     return allowedCount;
 }
 
-int countConsistentStrings(string allowed, vector<string> & words){
-    set<int> letters;
-    for(int i = 0; i < allowed.size(); i++){
-        letters.insert(allowed[i]);
-    }
+// int countConsistentStrings(string allowed, vector<string> & words){
+//     set<int> letters;
+//     for(int i = 0; i < allowed.size(); i++){
+//         letters.insert(allowed[i]);
+//     }
 
-    int lettersSize = letters.size();
-    int finalCount = 0;
-    if(lettersSize == 0 || words.size() == 0){
-        return 0;
-    }
+//     int lettersSize = letters.size();
+//     int finalCount = 0;
+//     if(lettersSize == 0 || words.size() == 0){
+//         return 0;
+//     }
 
-    for(int i = 0; i < words.size(); i++){
-        bool isAllowed = true;
+//     for(int i = 0; i < words.size(); i++){
+//         bool isAllowed = true;
 
-        for(int j = 0; j < words[i].size(); j++){
-            if(!isAllowed){
-                break;
-            }
+//         for(int j = 0; j < words[i].size(); j++){
+//             if(!isAllowed){
+//                 break;
+//             }
 
-            letters.insert(words[i][j]);
-            if(lettersSize != letters.size()){
-                letters.erase(words[i][j]);
-                isAllowed = false;
-            }
-        }
-        if(isAllowed){
-            finalCount++;
-        }
-    }
-    return finalCount;
-}
+//             letters.insert(words[i][j]);
+//             if(lettersSize != letters.size()){
+//                 letters.erase(words[i][j]);
+//                 isAllowed = false;
+//             }
+//         }
+//         if(isAllowed){
+//             finalCount++;
+//         }
+//     }
+//     return finalCount;
+// }
