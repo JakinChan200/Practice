@@ -24,8 +24,8 @@ void rotate(vector<vector<int>> &matrix){
 
     for(int i = 0; i < size/2; i++){
         for(int j = offset; j < size-offset-1; j++){
-            offset1 = size-1-offset;
-            offset2 = size-1-j;
+            offset1 = size-1-offset; //Distance from edge
+            offset2 = size-1-j; //Iterating along the edge
 
             int temp = matrix[offset][j];
             matrix[offset][j] = matrix[offset2][offset];
