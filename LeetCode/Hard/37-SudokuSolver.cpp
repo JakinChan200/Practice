@@ -13,7 +13,7 @@ bool solve(vector<vector<char>> &board, int curr){
     int row = curr / 9;
     int col = curr % 9;
 
-    if(board[row][col] == '.'){
+    if(board[row][col] != '.'){
         return solve(board, curr + 1);
     }
 
@@ -32,7 +32,7 @@ bool solve(vector<vector<char>> &board, int curr){
 bool isValid(vector<vector<char>> &board, int row, int col, char character){
     for(int i = 0; i < 9; i++){
         if(character == board[row][i] || character == board[i][col] || 
-            character == board[3 * (row / 3) + (i / 3)][3 * (col / 3) + i % 3]){
+            character == board[3 * (row / 3) + i / 3][3 * (col / 3) + i % 3]){
            return false; 
         }
     }
