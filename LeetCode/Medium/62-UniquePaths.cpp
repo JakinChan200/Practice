@@ -26,18 +26,6 @@ int uniquePaths(int m, int n){
             }
         }
     }
-
-    // for(int i = 0; i < m; i++){
-    //     for(int j = 0; j < n; j++){
-    //         if(i != 0 && i != m-1){
-    //             paths++;
-    //         }
-
-    //         if(j != 0 && j != n-1){
-    //             paths++;
-    //         }
-    //     }
-    // }
     return dp[dp.size()-1][dp[dp.size()-1].size()-1];
 }
 
