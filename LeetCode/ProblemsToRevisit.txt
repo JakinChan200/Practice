@@ -5,6 +5,7 @@ Easy:
 
 Medium:
 Balanced Binary Tree
+105. Contruct Binary tree from preorder and inorder
 
 Hard:
 212. Word Search II
