@@ -6,6 +6,7 @@ Easy:
 Medium:
 Balanced Binary Tree
 105. Contruct Binary tree from preorder and inorder
+300. Length of Longest Increasing Subsequence
 
 Hard:
 212. Word Search II
