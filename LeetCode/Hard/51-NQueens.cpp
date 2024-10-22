@@ -20,35 +20,35 @@ void printAllBoards(vector<vector<string>> &answers){
 }
 
 vector<string> buildBoard(int n){
-    string tempRow (n, '.');
-    vector<string> board(n, tempRow);
+    vector<string> board(n, string(n, '.'));
 
     return board;
 }
 
 bool isOpen(vector<string> &board, int row, int col){
     int b = board.size();
-    int correction = 1;
 
     for(int i = 0; i < board.size(); i++){
         if(board[i][col] == 'Q'){
             return false;
         }
 
-        if(board[row][i] == 'Q'){
-            return false;
-        }
+        // if(board[row][i] == 'Q'){
+        //     return false;
+        // }
 
         //Diagonal top left to bottom right
         // cout << i << " " << (i + col - row) << endl;
-        if((i + col - row) >= 0 && (i + col - row) < board.size() && board[i][i + col - row] == 'Q'){
+        int col1 = i + col - row;
+        if(col1 >= 0 && col1 < board.size() && board[i][col1] == 'Q'){
             // board[i][i + col - row] = 'Q';
             return false;
         }
 
         //Diagonal bottom left to top right
         // cout << b-i-1 << " " << i + col + row - b + correction << endl;
-        if(i + col + row - b + 1 >= 0 && i + col + row - b + 1 < board.size() && board[b-i-1][i + col + row - b + 1] == 'Q'){
+        int col2 = i + col + row - b + 1;
+        if(col2 >= 0 && col2 < board.size() && board[b-i-1][col2] == 'Q'){
             // board[b-i-1][i + col + row - b + 1] = 'Q';
             return false;
         }
@@ -57,15 +57,16 @@ bool isOpen(vector<string> &board, int row, int col){
 }
 
 void addQueen(vector<string> board, vector<vector<string>> &answers, int n, int row){
+    if(row >= board.size()){
+        answers.push_back(board);
+        return;
+    }
+
     for(int i = 0; i < n; i++){
         if(isOpen(board, row, i)){
-            vector<string> temp = board;
-            temp[row][i] = 'Q';
-            if(row == board.size()-1){
-                answers.push_back(temp);
-            }else{
-                addQueen(temp, answers, n, row+1);
-            }
+            board[row][i] = 'Q';
+            addQueen(board, answers, n, row+1);
+            board[row][i] = '.';
         }
     }
 }
@@ -95,6 +96,7 @@ int main(int argc, char** argv){
 //  row - h
 //doesn't break
 
+//Interstingly, they just kept track of the diagonals that were used instead of iterating through them
 
 // . Q . . .
 // . . . . .
