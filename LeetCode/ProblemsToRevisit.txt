@@ -4,9 +4,10 @@ Easy:
 70. Climbing Stairs
 
 Medium:
-Balanced Binary Tree
+1382. Balanced Binary Tree
 105. Contruct Binary tree from preorder and inorder
 300. Length of Longest Increasing Subsequence
+424. Longest Repeating Character Replacement
 
 Hard:
 212. Word Search II
