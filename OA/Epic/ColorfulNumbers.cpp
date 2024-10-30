@@ -1,5 +1,5 @@
 //Given a number, it is colorful if all possible consecutive substrings 
-//where it digits are multiplied together, the products are unique. 
+//where if the digits are multiplied together, the products are unique. 
 //Given a number, print whether it is colorful
 
 #include <bits/stdc++.h>
@@ -29,10 +29,6 @@ bool isColorful(int num){
     set<int> combinations;
 
     for(int i = 0; i < nums.size(); i++){
-        if(nums[i] == 0 || nums[i] == 1){
-            return false;
-        }
-
         int product = 1;
         for(int j = i; j < nums.size(); j++){
             product *= nums[j];
