@@ -2,9 +2,9 @@ Easy:
 21. Merge Two Sorted Lists
 121. Best Time To Buy and Sell Stock
 70. Climbing Stairs
+110. Balanced Binary Tree
 
 Medium:
-1382. Balanced Binary Tree
 105. Contruct Binary tree from preorder and inorder
 300. Length of Longest Increasing Subsequence
 424. Longest Repeating Character Replacement
@@ -12,3 +12,8 @@ Medium:
 Hard:
 212. Word Search II
 37. Sudoku Solver
+
+
+Problems to Complete
+Easy
+110. Balanced Binary Tree
