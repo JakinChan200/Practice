@@ -36,7 +36,7 @@ int buildNum(vector<int> digits){
 
 int maximumSwap(int num){
     vector<int> digits = breakDownNum(num);
-    int indexOfMax = -1;
+    int indexOfMax = digits.size()-1;
     int left = -1;
     int right = -1;
 
