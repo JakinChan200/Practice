@@ -26,89 +26,32 @@ void printFreq(vector<int> nums){
 }
 
 string minWindow(string s, string t){
-    vector<int> map(128, 0);
+    vector<int> freq(128, 0);
+    int numLetters = t.size();
+    int indexLow = 0;
+    vector<int> minLength(2, INT_MAX);
 
     for(int i = 0; i < t.size(); i++){
-        map[t[i]]++;
+        freq[t[i]]++;
     }
 
-    int lowIndex = 0;
-    int highIndex = 0;
-    int numLetters = t.size();
-    int minLength = INT_MAX;
-    int minStart = 0;
-    int i = 0;
-    while(i < s.size()){
-        if(map[s[i++]]-- > 0){
+    for(int i = 0; i < s.size(); i++){
+        if(freq[s[i]]-- > 0){
             numLetters--;
         }
 
         while(numLetters == 0){
-            if(i - lowIndex < minLength){
-                minStart = lowIndex;
-                minLength = i - minStart;
+            if(i-indexLow+1 < minLength[0]){
+                minLength = {i-indexLow+1, indexLow};
             }
-
-            if(map[s[lowIndex++]]++ == 0){
+            if(freq[s[indexLow++]]++ == 0){
                 numLetters++;
             }
         }
     }
 
-    return minLength == INT_MAX ? "" : s.substr(minStart, minLength);
+    return minLength[0] == INT_MAX ? "" : s.substr(minLength[1], minLength[0]);
 }
-
-
-// void increaseLowerBound(int &indexLow, int &indexHigh, vector<int> &freq, string s){
-//     while(indexLow < indexHigh){
-//         if(freq[s[indexLow]] >= 0){
-//             return;
-//         }
-//         if(freq[s[indexLow]] > INT_MIN){
-//             freq[s[indexLow]]++;
-//         }
-//         indexLow++;
-//     }
-// }
-
-// string minWindow(string s, string t){
-//     vector<int> freq(128, INT_MIN);
-//     int numLetters = t.size();
-//     int indexLow = 0;
-//     int indexHigh = 0;
-//     vector<int> minLength(3, 0);
-
-//     for(int i = 0; i < t.size(); i++){
-//         freq[t[i]] == INT_MIN ? freq[t[i]] = 1 : freq[t[i]]++;
-//     }
-
-//     for(int i = 0; i < s.size(); i++){
-//         if(freq[s[i]] > 0){
-//             freq[s[i]]--;
-//             numLetters--;
-//             indexHigh = i;
-//         }else if(freq[s[i]] > INT_MIN){
-//             freq[s[i]]--;
-//             indexHigh = i;
-
-//         }
-
-//         // printFreq(freqLowerCase);
-//         // cout << numLetters << " " << indexLow << " " << indexHigh << endl;
-
-//         if(numLetters <= 0){
-//             increaseLowerBound(indexLow, indexHigh, freq, s);
-//             if(minLength[0] == 0 || indexHigh-indexLow+1 < minLength[0]){
-//                 minLength = {indexHigh-indexLow+1, indexLow, indexHigh};
-//             }
-//         }
-//     }
-
-//     if(minLength[0] > 0){
-//         return s.substr(minLength[1], minLength[0]);
-//     }
-//     return "";
-// }
 
 int main(int argc,char** argv){
     string s = "ab";
