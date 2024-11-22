@@ -12,6 +12,7 @@ Medium:
 Hard:
 212. Word Search II
 37. Sudoku Solver
+295. Find Median from Data Stream
 
 
 Problems to Complete
