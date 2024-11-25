@@ -6,7 +6,7 @@
 using namespace std;
 
 class TrieNode {
-    public:
+public:
     TrieNode *child[26];
     bool isWord;
     TrieNode(){
