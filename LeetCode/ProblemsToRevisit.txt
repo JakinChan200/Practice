@@ -5,6 +5,7 @@ Easy:
 110. Balanced Binary Tree
 
 Medium:
+46: Permutations
 105. Contruct Binary tree from preorder and inorder
 300. Length of Longest Increasing Subsequence
 424. Longest Repeating Character Replacement
