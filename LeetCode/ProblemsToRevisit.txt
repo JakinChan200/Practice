@@ -10,6 +10,7 @@ Medium:
 300. Length of Longest Increasing Subsequence
 424. Longest Repeating Character Replacement
 133. Clone Graph
+678. Valid Parenthesis String
 
 Hard:
 212. Word Search II
