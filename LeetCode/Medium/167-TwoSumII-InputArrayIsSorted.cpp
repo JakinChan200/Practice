@@ -6,3 +6,17 @@
 
 using namespace std;
 
+vector<int> twoSum(vector<int>& numbers, int target) {
+    int end = numbers.size()-1;
+    int start = 0;
+
+    while(numbers[start] + numbers[end] != target){
+        if(numbers[start] + numbers[end] < target){
+            start++;
+        }else{
+            end--;
+        }
+    }
+
+    return {start+1, end+1};
+}
