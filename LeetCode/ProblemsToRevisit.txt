@@ -11,6 +11,7 @@ Medium:
 424. Longest Repeating Character Replacement
 133. Clone Graph
 678. Valid Parenthesis String
+386. LexicographicalNumbers.cpp
 
 Hard:
 212. Word Search II
