@@ -4,29 +4,24 @@
 
 using namespace std;
 
-int search(vector<int>& nums, int target){
+int search(vector<int>& nums, int target) {
     int low = 0;
     int high = nums.size()-1;
 
-    while(high > low && low+1 != high){
-        int mid = (((double)high - low) / 2) + low;
-        cout << low << " " << mid <<  " " << high << endl;
+    while(low <= high){
+        int mid = (high - low) / 2 + low;
+
         if(nums[mid] == target){
             return mid;
         }
 
         if(nums[mid] < target){
-            low = mid;
+            low = mid+1;
         }else{
-            high = mid;
+            high = mid-1;
         }
     }
 
-    if(nums[high] == target){
-        return high;
-    }else if(nums[low] == target){
-        return low;
-    }
     return -1;
 }
 
