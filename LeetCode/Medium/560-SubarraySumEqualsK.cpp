@@ -13,7 +13,7 @@ int subarraySum(vector<int>& nums, int k) {
 
     for(int i = 0; i < nums.size(); i++){
         runningSum += nums[i];
-        if(mp.contains(runningSum - k)){
+        if(mp.find(runningSum - k) != mp.end()){
             numSubArrays += mp[runningSum - k];
         }
 
